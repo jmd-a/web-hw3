@@ -16,7 +16,6 @@ def process_folder(folder_path):
     main_thread = threading.Thread(target=sort_files, args=(folder_path,))
     main_thread.start()
 
-    # Перебираємо всі підпапки та створюємо потік для кожної
     for root, dirs, _ in os.walk(folder_path):
         for dir in dirs:
             dir_path = os.path.join(root, dir)
